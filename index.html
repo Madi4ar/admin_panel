@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin Panel</title>
+</head>
+<body style="font-family: 'Montserrat', sans-serif;">
+    <style>        
+    ::-webkit-scrollbar-track{background-color:#fff}
+    ::-webkit-scrollbar{width:8px}
+    ::-webkit-scrollbar-thumb{background-color:#4682B4}
+    </style>
+    <div class="content">
+        <div class="admin_panel h-screen overflow-x-hidden bg-[#19B2DD] w-1/5 rounded-e-2xl px-3.5 py-3.5">
+            <i class="md: fa-solid fa-bars text-3xl cursor-pointer" style="color: #000000;"></i>
+            <div class="logo_admin flex items-center ">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 16C4.84192e-07 18.5263 2.03301 20.5593 6.09902 24.6253L7.37469 25.901C11.4407 29.967 13.4737 32 16 32C18.5263 32 20.5593 29.967 24.6253 25.901L25.901 24.6253C29.967 20.5593 32 18.5263 32 16C32 13.4737 29.967 11.4407 25.901 7.37468L24.6253 6.09901C20.5593 2.033 18.5263 0 16 0C13.4737 1.1079e-06 11.4407 2.03301 7.37468 6.09902L6.09901 7.37469C2.033 11.4407 -4.25901e-07 13.4737 0 16ZM8.74933 27.2713C11.5932 30.0868 13.3664 31.645 15.2976 31.946L20.2129 26.844L15.9291 25.5371L14.84 21.1806L8.74933 27.2713Z" fill="url(#paint0_linear_1_118)"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_1_118" x1="10.6654" y1="-18.5891" x2="46.8224" y2="9.9351" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="white"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+                <h1 class="font-extrabold text-white text-2xl ml-3">ESUS</h1>    
+            </div>
+
+            <div class="search_panel">
+                <div class="search-box mt-5 relative ">
+                    <button class="btn-search sm: !bg-transparent sm: focus:bg-transparent w-12 h-10 border-none text-xl font-semibold
+                    outline-0 cursor-pointer rounded-[50%] absolute right-0.5 bg-transparent
+                    focus:border border-[#D9D9D9] focus:rounded-xl
+                    focus: bg-white focus:~+ transition-all focus:~+ duration-500
+                    focus: text-black"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
+                    <input type="text" class="input-search placeholder-[#7E7E7E] placeholder-text-[8px]  h-10 w-full
+                    rounded-xl bg-white text-black p-2.5 text-lg
+                     outline-0 pr-10 border border-[#D9D9D9] text-[#000000]
+                    focus:w-full focus:border border-[#D9D9D9] focus:rounded-xl focus:bg-white 
+                    focus:text-black focus:transition-all focus:duration-500" placeholder="Іздеу">
+                </div>
+            </div>
+
+            <div class="category_title mt-5 flex items-center">
+                <h1 class="text-[#D9D9D9] uppercase font-bold">Оқу ағарту</h1>    
+            </div>
+
+            <div class="faq-items mt-2 rounded-lg w-full">
+							<div class="documents py-3 rounded-lg">
+								<div class="faq-head text-[#151515] relative text-[24px] font-medium flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+									<div class="faq-title flex items-center">
+                                        <svg width="25" height="25" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.91719 0.126562C7.66406 -0.0421875 7.33594 -0.0421875 7.08281 0.126562L3.89766 2.25H1.125C0.503906 2.25 0 2.75391 0 3.375V10.875C0 11.4961 0.503906 12 1.125 12H13.875C14.4961 12 15 11.4961 15 10.875V3.375C15 2.75391 14.4961 2.25 13.875 2.25H11.1023L7.91719 0.126562ZM6 9.75C6 8.92266 6.67266 8.25 7.5 8.25C8.32734 8.25 9 8.92266 9 9.75V12H6V9.75ZM2.25 4.5H3C3.20625 4.5 3.375 4.66875 3.375 4.875V6.375C3.375 6.58125 3.20625 6.75 3 6.75H2.25C2.04375 6.75 1.875 6.58125 1.875 6.375V4.875C1.875 4.66875 2.04375 4.5 2.25 4.5ZM11.625 4.875C11.625 4.66875 11.7937 4.5 12 4.5H12.75C12.9563 4.5 13.125 4.66875 13.125 4.875V6.375C13.125 6.58125 12.9563 6.75 12.75 6.75H12C11.7937 6.75 11.625 6.58125 11.625 6.375V4.875ZM2.25 7.5H3C3.20625 7.5 3.375 7.66875 3.375 7.875V9.375C3.375 9.58125 3.20625 9.75 3 9.75H2.25C2.04375 9.75 1.875 9.58125 1.875 9.375V7.875C1.875 7.66875 2.04375 7.5 2.25 7.5ZM11.625 7.875C11.625 7.66875 11.7937 7.5 12 7.5H12.75C12.9563 7.5 13.125 7.66875 13.125 7.875V9.375C13.125 9.58125 12.9563 9.75 12.75 9.75H12C11.7937 9.75 11.625 9.58125 11.625 9.375V7.875ZM5.4375 4.125C5.4375 3.57799 5.6548 3.05339 6.04159 2.66659C6.42839 2.2798 6.95299 2.0625 7.5 2.0625C8.04701 2.0625 8.57161 2.2798 8.95841 2.66659C9.3452 3.05339 9.5625 3.57799 9.5625 4.125C9.5625 4.67201 9.3452 5.19661 8.95841 5.58341C8.57161 5.9702 8.04701 6.1875 7.5 6.1875C6.95299 6.1875 6.42839 5.9702 6.04159 5.58341C5.6548 5.19661 5.4375 4.67201 5.4375 4.125ZM7.5 3C7.29375 3 7.125 3.16875 7.125 3.375V4.125C7.125 4.33125 7.29375 4.5 7.5 4.5H8.25C8.45625 4.5 8.625 4.33125 8.625 4.125C8.625 3.91875 8.45625 3.75 8.25 3.75H7.875V3.375C7.875 3.16875 7.70625 3 7.5 3Z" fill="white"/>
+                                        </svg>
+                                        <p class="font-semibold text-base text-white ml-3">Оқу үдерісі</p>
+                                    </div>
+                                    <svg width="15" height="10" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.4957 4.81693C4.77463 5.06102 5.2276 5.06102 5.50653 4.81693L9.79081 1.06766C10.0697 0.82357 10.0697 0.427163 9.79081 0.18307C9.51188 -0.0610232 9.05891 -0.0610232 8.77998 0.18307L5 3.49102L1.22002 0.185022C0.941091 -0.0590707 0.488118 -0.0590707 0.209193 0.185022C-0.0697311 0.429115 -0.0697311 0.825522 0.209193 1.06962L4.49347 4.81888L4.4957 4.81693Z" fill="white"/>
+                                    </svg>
+                                        
+								</div>
+								<div class="faq-content flex flex-col mt-5 hidden text-[#444444] font-normal text-[16px] leading-[1.5]">
+									<div class="links_to_pages flex flex-col">
+                                        <a href="" class="text-white relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Оқу жылдары
+                                        </a>
+                                        <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Демалыс/жұмыс күндері
+                                        </a>
+                                        <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Оқыту тілі
+                                        </a>
+                                        <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Бағдарламалар
+                                        </a>
+                                        <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Бағдарлама категориясы
+                                        </a>
+                                        <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Курстар квотасы
+                                        </a>
+                                        <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Сертификаттар үлгілері
+                                        </a>
+                                    </div>
+									
+								</div>
+							</div>
+
+                            <div class="documents py-3 rounded-lg">
+								<div class="faq-head text-[#151515] relative text-[24px] font-medium flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+									<div class="faq-title flex items-center">
+                                        <svg width="25" height="22" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_1_37)">
+                                            <path d="M3.75 1.5C3.75 0.672656 4.42266 0 5.25 0H13.5C14.3273 0 15 0.672656 15 1.5V8.25C15 9.07734 14.3273 9.75 13.5 9.75H7.89375C7.61719 9.15234 7.19297 8.63672 6.66562 8.25H9V7.5C9 7.08516 9.33516 6.75 9.75 6.75H11.25C11.6648 6.75 12 7.08516 12 7.5V8.25H13.5V1.5H5.25V2.65078C4.80937 2.39531 4.29609 2.25 3.75 2.25V1.5ZM3.75 3C4.04547 3 4.33806 3.0582 4.61104 3.17127C4.88402 3.28434 5.13206 3.45008 5.34099 3.65901C5.54992 3.86794 5.71566 4.11598 5.82873 4.38896C5.9418 4.66194 6 4.95453 6 5.25C6 5.54547 5.9418 5.83806 5.82873 6.11104C5.71566 6.38402 5.54992 6.63206 5.34099 6.84099C5.13206 7.04992 4.88402 7.21566 4.61104 7.32873C4.33806 7.4418 4.04547 7.5 3.75 7.5C3.45453 7.5 3.16194 7.4418 2.88896 7.32873C2.61598 7.21566 2.36794 7.04992 2.15901 6.84099C1.95008 6.63206 1.78434 6.38402 1.67127 6.11104C1.5582 5.83806 1.5 5.54547 1.5 5.25C1.5 4.95453 1.5582 4.66194 1.67127 4.38896C1.78434 4.11598 1.95008 3.86794 2.15901 3.65901C2.36794 3.45008 2.61598 3.28434 2.88896 3.17127C3.16194 3.0582 3.45453 3 3.75 3ZM3.12422 8.25H4.37344C6.10078 8.25 7.5 9.64922 7.5 11.3742C7.5 11.7188 7.22109 12 6.87422 12H0.625781C0.278906 12 0 11.7211 0 11.3742C0 9.64922 1.39922 8.25 3.12422 8.25Z" fill="#fff"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_1_37">
+                                            <rect width="15" height="12" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>    
+                                        <p class="font-semibold text-base text-white ml-3">Курстан кейінгі қолдау</p>
+                                    </div>
+                                    <svg width="15" height="10" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.4957 4.81693C4.77463 5.06102 5.2276 5.06102 5.50653 4.81693L9.79081 1.06766C10.0697 0.82357 10.0697 0.427163 9.79081 0.18307C9.51188 -0.0610232 9.05891 -0.0610232 8.77998 0.18307L5 3.49102L1.22002 0.185022C0.941091 -0.0590707 0.488118 -0.0590707 0.209193 0.185022C-0.0697311 0.429115 -0.0697311 0.825522 0.209193 1.06962L4.49347 4.81888L4.4957 4.81693Z" fill="white"/>
+                                    </svg>
+                                        
+								</div>
+								<div class="faq-content flex flex-col mt-5 hidden text-[#444444] font-normal text-[16px] leading-[1.5]">
+									<div class="links_to_pages flex flex-col">
+                                        <a href="" class="text-white relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Сауалнама.Нәтижелерді талдау
+                                        </a>
+                                        <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Курстан кейінгі қолдау матрицасы
+                                        </a>
+                                        
+                                    </div>
+									
+								</div>
+							</div>
+
+                            <div class="documents py-3 rounded-lg">
+								<div class="faq-head text-[#151515] relative text-[24px] font-medium flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+									<div class="faq-title flex items-center">
+                                        <svg width="25" height="25" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_1_44)">
+                                            <path d="M3 0.75C2.17266 0.75 1.5 1.42266 1.5 2.25V8.25H3V2.25H12V8.25H13.5V2.25C13.5 1.42266 12.8273 0.75 12 0.75H3ZM0.45 9C0.201563 9 0 9.20156 0 9.45C0 10.4438 0.80625 11.25 1.8 11.25H13.2C14.1938 11.25 15 10.4438 15 9.45C15 9.20156 14.7984 9 14.55 9H0.45Z" fill="white"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_1_44">
+                                            <rect width="15" height="12" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <p class="font-semibold text-base text-white ml-3">Курстар</p>
+                                    </div>
+                                    <svg width="15" height="10" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.4957 4.81693C4.77463 5.06102 5.2276 5.06102 5.50653 4.81693L9.79081 1.06766C10.0697 0.82357 10.0697 0.427163 9.79081 0.18307C9.51188 -0.0610232 9.05891 -0.0610232 8.77998 0.18307L5 3.49102L1.22002 0.185022C0.941091 -0.0590707 0.488118 -0.0590707 0.209193 0.185022C-0.0697311 0.429115 -0.0697311 0.825522 0.209193 1.06962L4.49347 4.81888L4.4957 4.81693Z" fill="white"/>
+                                    </svg>
+                                        
+								</div>
+								<div class="faq-content flex flex-col mt-5 hidden text-[#444444] font-normal text-[16px] leading-[1.5]">
+									<div class="links_to_pages flex flex-col">
+                                        <a href="" class="text-white relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Тренерлер тізімі
+                                        </a>
+                                        <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Топтар тізімі
+                                        </a>
+                                        <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Сертификаттар
+                                        </a>
+                                        <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Топтар кестесі
+                                        </a>
+                                        <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                        after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                        after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                        hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                        hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                        hover:after:duration-500">
+                                            Сабаққа қатысу
+                                        </a>
+                                    </div>
+									
+								</div>
+							</div>
+							</div>
+
+                            <div class="category_title mt-5 flex items-center">
+                                <h1 class="text-[#D9D9D9] uppercase font-bold">Қызметкерлер</h1>    
+                            </div>
+
+                            <div class="faq-items mt-2 rounded-lg w-full">
+                                <div class="documents py-3 rounded-lg">
+                                    <div class="faq-head text-[#151515] relative text-[24px] font-medium flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+                                        <div class="faq-title flex items-center">
+                                            <svg width="25" height="25" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1_56)">
+                                                <path d="M5.58105 1.6125L6.60059 3H6.5625H4.45312C3.80566 3 3.28125 2.58047 3.28125 2.0625C3.28125 1.54453 3.80566 1.125 4.45312 1.125H4.51758C4.9541 1.125 5.36133 1.31016 5.58105 1.6125ZM1.875 2.0625C1.875 2.4 1.97754 2.71875 2.15625 3H0.9375C0.418945 3 0 3.33516 0 3.75V5.25C0 5.66484 0.418945 6 0.9375 6H14.0625C14.5811 6 15 5.66484 15 5.25V3.75C15 3.33516 14.5811 3 14.0625 3H12.8438C13.0225 2.71875 13.125 2.4 13.125 2.0625C13.125 0.923438 11.9707 0 10.5469 0H10.4824C9.54785 0 8.68066 0.396094 8.20605 1.04063L7.5 2.00391L6.79395 1.04297C6.31934 0.396094 5.45215 0 4.51758 0H4.45312C3.0293 0 1.875 0.923438 1.875 2.0625ZM11.7188 2.0625C11.7188 2.58047 11.1943 3 10.5469 3H8.4375H8.39941L9.41895 1.6125C9.6416 1.31016 10.0459 1.125 10.4824 1.125H10.5469C11.1943 1.125 11.7188 1.54453 11.7188 2.0625ZM0.9375 6.75V10.875C0.9375 11.4961 1.56738 12 2.34375 12H6.5625V6.75H0.9375ZM8.4375 12H12.6562C13.4326 12 14.0625 11.4961 14.0625 10.875V6.75H8.4375V12Z" fill="white"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_1_56">
+                                                <rect width="15" height="12" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="font-semibold text-base text-white ml-3">Іс-шаралар</p>
+                                        </div>
+                                        <svg width="15" height="10" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.4957 4.81693C4.77463 5.06102 5.2276 5.06102 5.50653 4.81693L9.79081 1.06766C10.0697 0.82357 10.0697 0.427163 9.79081 0.18307C9.51188 -0.0610232 9.05891 -0.0610232 8.77998 0.18307L5 3.49102L1.22002 0.185022C0.941091 -0.0590707 0.488118 -0.0590707 0.209193 0.185022C-0.0697311 0.429115 -0.0697311 0.825522 0.209193 1.06962L4.49347 4.81888L4.4957 4.81693Z" fill="white"/>
+                                        </svg>
+                                            
+                                    </div>
+                                    <div class="faq-content flex flex-col mt-5 hidden text-[#444444] font-normal text-[16px] leading-[1.5]">
+                                        <div class="links_to_pages flex flex-col">
+                                            <a href="" class="text-white relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Топтар тізімі
+                                            </a>
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Іс-шара бағдарламалары
+                                            </a>
+                                            <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Іс-шара типтері
+                                            </a>
+                                            <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Сертификаттар үлгілері
+                                            </a>
+                                            <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Берілген сертификаттар
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+    
+                                <div class="documents py-3 rounded-lg">
+                                    <div class="faq-head text-[#151515] relative text-[24px] font-medium flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+                                        <div class="faq-title flex items-center">
+                                            <svg width="25" height="25" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1_63)">
+                                                <path d="M3.50008 1.3125C3.50008 0.964403 3.65811 0.630564 3.93942 0.384422C4.22072 0.138281 4.60225 0 5.00008 0C5.3979 0 5.77944 0.138281 6.06074 0.384422C6.34204 0.630564 6.50008 0.964403 6.50008 1.3125C6.50008 1.6606 6.34204 1.99444 6.06074 2.24058C5.77944 2.48672 5.3979 2.625 5.00008 2.625C4.60225 2.625 4.22072 2.48672 3.93942 2.24058C3.65811 1.99444 3.50008 1.6606 3.50008 1.3125ZM4.75008 9.625V13.125C4.75008 13.609 4.3032 14 3.75008 14C3.19695 14 2.75008 13.609 2.75008 13.125V7.02461L1.85633 8.32617C1.57195 8.73906 0.95633 8.87305 0.484455 8.62422C0.0125795 8.37539 -0.140545 7.83672 0.14383 7.42383L1.9657 4.77148C2.50945 3.98125 3.48445 3.49727 4.53758 3.49727H5.4657C6.51883 3.49727 7.49383 3.98125 8.03758 4.77148L9.85945 7.42383C10.1438 7.83672 9.9907 8.37539 9.51883 8.62422C9.04695 8.87305 8.43133 8.73906 8.14695 8.32617L7.25008 7.02461V13.125C7.25008 13.609 6.8032 14 6.25008 14C5.69695 14 5.25008 13.609 5.25008 13.125V9.625H4.75008Z" fill="white"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_1_63">
+                                                <rect width="10" height="14" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="font-semibold text-base text-white ml-3">Қызметкерлер туралы ақпарат</p>
+                                        </div>
+                                        <svg width="15" height="10" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.4957 4.81693C4.77463 5.06102 5.2276 5.06102 5.50653 4.81693L9.79081 1.06766C10.0697 0.82357 10.0697 0.427163 9.79081 0.18307C9.51188 -0.0610232 9.05891 -0.0610232 8.77998 0.18307L5 3.49102L1.22002 0.185022C0.941091 -0.0590707 0.488118 -0.0590707 0.209193 0.185022C-0.0697311 0.429115 -0.0697311 0.825522 0.209193 1.06962L4.49347 4.81888L4.4957 4.81693Z" fill="white"/>
+                                        </svg>
+                                            
+                                    </div>
+                                    <div class="faq-content flex flex-col mt-5 hidden text-[#444444] font-normal text-[16px] leading-[1.5]">
+                                        <div class="links_to_pages flex flex-col">
+                                            <a href="" class="text-white relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Лауазым
+                                            </a>
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Білім
+                                            </a>
+
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Ғылыми дәрежесі
+                                            </a>
+
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Категория
+                                            </a>
+
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Ұлт
+                                            </a>
+
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Жыныс
+                                            </a>
+
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Тренер категориялары
+                                            </a>
+
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Оқыту пәндері
+                                            </a>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+    
+                                <div class="documents py-3 rounded-lg">
+                                    <div class="faq-head text-[#151515] relative text-[24px] font-medium flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+                                        <div class="faq-title flex items-center">
+                                            <svg width="25" height="25" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1_70)">
+                                                <path d="M5.61719 11.7C6.95312 10.1953 10 6.54844 10 4.5C10 2.01562 7.76042 0 5 0C2.23958 0 0 2.01562 0 4.5C0 6.54844 3.04688 10.1953 4.38281 11.7C4.70312 12.0586 5.29688 12.0586 5.61719 11.7ZM5 3C5.44203 3 5.86595 3.15804 6.17851 3.43934C6.49107 3.72064 6.66667 4.10218 6.66667 4.5C6.66667 4.89782 6.49107 5.27936 6.17851 5.56066C5.86595 5.84196 5.44203 6 5 6C4.55797 6 4.13405 5.84196 3.82149 5.56066C3.50893 5.27936 3.33333 4.89782 3.33333 4.5C3.33333 4.10218 3.50893 3.72064 3.82149 3.43934C4.13405 3.15804 4.55797 3 5 3Z" fill="white"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_1_70">
+                                                <rect width="10" height="12" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="font-semibold text-base text-white ml-3">Курстар</p>
+                                        </div>
+                                        <svg width="15" height="10" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.4957 4.81693C4.77463 5.06102 5.2276 5.06102 5.50653 4.81693L9.79081 1.06766C10.0697 0.82357 10.0697 0.427163 9.79081 0.18307C9.51188 -0.0610232 9.05891 -0.0610232 8.77998 0.18307L5 3.49102L1.22002 0.185022C0.941091 -0.0590707 0.488118 -0.0590707 0.209193 0.185022C-0.0697311 0.429115 -0.0697311 0.825522 0.209193 1.06962L4.49347 4.81888L4.4957 4.81693Z" fill="white"/>
+                                        </svg>
+                                            
+                                    </div>
+                                    <div class="faq-content flex flex-col mt-5 hidden text-[#444444] font-normal text-[16px] leading-[1.5]">
+                                        <div class="links_to_pages flex flex-col">
+                                            <a href="" class="text-white relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Тренерлер тізімі
+                                            </a>
+                                            <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Топтар тізімі
+                                            </a>
+                                            <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Сертификаттар
+                                            </a>
+                                            <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Топтар кестесі
+                                            </a>
+                                            <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Сабаққа қатысу
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="documents py-3 rounded-lg">
+                                    <div class="faq-head text-[#151515] relative  flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+                                        <div class="faq-title flex items-center">
+                                            <svg width="25" height="25" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.91719 0.126562C7.66406 -0.0421875 7.33594 -0.0421875 7.08281 0.126562L3.89766 2.25H1.125C0.503906 2.25 0 2.75391 0 3.375V10.875C0 11.4961 0.503906 12 1.125 12H13.875C14.4961 12 15 11.4961 15 10.875V3.375C15 2.75391 14.4961 2.25 13.875 2.25H11.1023L7.91719 0.126562ZM6 9.75C6 8.92266 6.67266 8.25 7.5 8.25C8.32734 8.25 9 8.92266 9 9.75V12H6V9.75ZM2.25 4.5H3C3.20625 4.5 3.375 4.66875 3.375 4.875V6.375C3.375 6.58125 3.20625 6.75 3 6.75H2.25C2.04375 6.75 1.875 6.58125 1.875 6.375V4.875C1.875 4.66875 2.04375 4.5 2.25 4.5ZM11.625 4.875C11.625 4.66875 11.7937 4.5 12 4.5H12.75C12.9563 4.5 13.125 4.66875 13.125 4.875V6.375C13.125 6.58125 12.9563 6.75 12.75 6.75H12C11.7937 6.75 11.625 6.58125 11.625 6.375V4.875ZM2.25 7.5H3C3.20625 7.5 3.375 7.66875 3.375 7.875V9.375C3.375 9.58125 3.20625 9.75 3 9.75H2.25C2.04375 9.75 1.875 9.58125 1.875 9.375V7.875C1.875 7.66875 2.04375 7.5 2.25 7.5ZM11.625 7.875C11.625 7.66875 11.7937 7.5 12 7.5H12.75C12.9563 7.5 13.125 7.66875 13.125 7.875V9.375C13.125 9.58125 12.9563 9.75 12.75 9.75H12C11.7937 9.75 11.625 9.58125 11.625 9.375V7.875ZM5.4375 4.125C5.4375 3.57799 5.6548 3.05339 6.04159 2.66659C6.42839 2.2798 6.95299 2.0625 7.5 2.0625C8.04701 2.0625 8.57161 2.2798 8.95841 2.66659C9.3452 3.05339 9.5625 3.57799 9.5625 4.125C9.5625 4.67201 9.3452 5.19661 8.95841 5.58341C8.57161 5.9702 8.04701 6.1875 7.5 6.1875C6.95299 6.1875 6.42839 5.9702 6.04159 5.58341C5.6548 5.19661 5.4375 4.67201 5.4375 4.125ZM7.5 3C7.29375 3 7.125 3.16875 7.125 3.375V4.125C7.125 4.33125 7.29375 4.5 7.5 4.5H8.25C8.45625 4.5 8.625 4.33125 8.625 4.125C8.625 3.91875 8.45625 3.75 8.25 3.75H7.875V3.375C7.875 3.16875 7.70625 3 7.5 3Z" fill="white"/>
+                                            </svg>
+                                                
+                                            <a href="" class="text-white font-semibold mt-2 ml-3 relative cursor-pointer no-underline 
+                                            after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                            after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                            hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                            hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                            hover:after:duration-500">
+                                                Оқу орындары
+                                            </a>
+                                        </div>
+                                       
+                                            
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="category_title mt-5 flex items-center">
+                                    <h1 class="text-[#D9D9D9] uppercase font-bold">Баптаулар</h1>    
+                                </div>
+
+                                <div class="faq-items mt-2 rounded-lg w-full">
+                                    <div class="documents py-3 rounded-lg">
+                                        <div class="faq-head text-[#151515] relative text-[24px] font-medium flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+                                            <div class="faq-title flex items-center">
+                                                <svg width="25" height="25" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_92)">
+                                                    <path d="M6 7.5C6.90931 7.5 7.78138 7.10491 8.42437 6.40165C9.06735 5.69839 9.42857 4.74456 9.42857 3.75C9.42857 2.75544 9.06735 1.80161 8.42437 1.09835C7.78138 0.395088 6.90931 0 6 0C5.09069 0 4.21862 0.395088 3.57563 1.09835C2.93265 1.80161 2.57143 2.75544 2.57143 3.75C2.57143 4.74456 2.93265 5.69839 3.57563 6.40165C4.21862 7.10491 5.09069 7.5 6 7.5ZM4.77589 8.90625C2.1375 8.90625 0 11.2441 0 14.1299C0 14.6104 0.35625 15 0.795536 15H11.2045C11.6438 15 12 14.6104 12 14.1299C12 11.2441 9.8625 8.90625 7.22411 8.90625H4.77589Z" fill="white"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_1_92">
+                                                    <rect width="12" height="15" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <p class="font-semibold text-base text-white ml-3">Қолданушылар</p>
+                                            </div>
+                                            <svg width="15" height="10" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.4957 4.81693C4.77463 5.06102 5.2276 5.06102 5.50653 4.81693L9.79081 1.06766C10.0697 0.82357 10.0697 0.427163 9.79081 0.18307C9.51188 -0.0610232 9.05891 -0.0610232 8.77998 0.18307L5 3.49102L1.22002 0.185022C0.941091 -0.0590707 0.488118 -0.0590707 0.209193 0.185022C-0.0697311 0.429115 -0.0697311 0.825522 0.209193 1.06962L4.49347 4.81888L4.4957 4.81693Z" fill="white"/>
+                                            </svg>
+                                                
+                                        </div>
+                                        <div class="faq-content flex flex-col mt-5 hidden text-[#444444] font-normal text-[16px] leading-[1.5]">
+                                            <div class="links_to_pages flex flex-col">
+                                                <a href="" class="text-white relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Лауазым
+                                                </a>
+                                                <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Білім
+                                                </a>
+    
+                                                <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Ғылыми дәрежесі
+                                                </a>
+    
+                                                <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Категория
+                                                </a>
+    
+                                                <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Ұлт
+                                                </a>
+    
+                                                <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Жыныс
+                                                </a>
+    
+                                                <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Тренер категориялары
+                                                </a>
+    
+                                                <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Оқыту пәндері
+                                                </a>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+        
+                                    <div class="documents py-3 rounded-lg">
+                                        <div class="faq-head text-[#151515] relative text-[24px] font-medium flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+                                            <div class="faq-title flex items-center">
+                                                <svg width="25" height="25" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_99)">
+                                                    <path d="M10.3359 1.38047L10.6195 1.66407C10.8398 1.88438 10.8398 2.24063 10.6195 2.4586L9.9375 3.14297L8.85703 2.0625L9.53906 1.38047C9.75937 1.16016 10.1156 1.16016 10.3336 1.38047H10.3359ZM4.91719 6.00469L8.0625 2.85703L9.14297 3.9375L5.99531 7.08282C5.92734 7.15079 5.84297 7.2 5.75156 7.22578L4.38047 7.61719L4.77187 6.2461C4.79766 6.15469 4.84687 6.07032 4.91484 6.00235L4.91719 6.00469ZM8.74453 0.585941L4.12031 5.20782C3.91641 5.41172 3.76875 5.6625 3.69141 5.93672L3.02109 8.28047C2.96484 8.47735 3.01875 8.68828 3.16406 8.8336C3.30937 8.97891 3.52031 9.03282 3.71719 8.97657L6.06094 8.30625C6.3375 8.22657 6.58828 8.07891 6.78984 7.87735L11.4141 3.25547C12.0727 2.59688 12.0727 1.52813 11.4141 0.869534L11.1305 0.585941C10.4719 -0.0726532 9.40312 -0.0726532 8.74453 0.585941ZM2.0625 1.5C0.923437 1.5 0 2.42344 0 3.5625V9.9375C0 11.0766 0.923437 12 2.0625 12H8.4375C9.57656 12 10.5 11.0766 10.5 9.9375V7.3125C10.5 7.00079 10.2492 6.75 9.9375 6.75C9.62578 6.75 9.375 7.00079 9.375 7.3125V9.9375C9.375 10.4555 8.95547 10.875 8.4375 10.875H2.0625C1.54453 10.875 1.125 10.4555 1.125 9.9375V3.5625C1.125 3.04453 1.54453 2.625 2.0625 2.625H4.6875C4.99922 2.625 5.25 2.37422 5.25 2.0625C5.25 1.75078 4.99922 1.5 4.6875 1.5H2.0625Z" fill="white"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_1_99">
+                                                    <rect width="12" height="12" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <p class="font-semibold text-base text-white ml-3">Интеграциялар</p>
+                                            </div>
+                                            <svg width="15" height="10" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.4957 4.81693C4.77463 5.06102 5.2276 5.06102 5.50653 4.81693L9.79081 1.06766C10.0697 0.82357 10.0697 0.427163 9.79081 0.18307C9.51188 -0.0610232 9.05891 -0.0610232 8.77998 0.18307L5 3.49102L1.22002 0.185022C0.941091 -0.0590707 0.488118 -0.0590707 0.209193 0.185022C-0.0697311 0.429115 -0.0697311 0.825522 0.209193 1.06962L4.49347 4.81888L4.4957 4.81693Z" fill="white"/>
+                                            </svg>
+                                                
+                                        </div>
+                                        <div class="faq-content flex flex-col mt-5 hidden text-[#444444] font-normal text-[16px] leading-[1.5]">
+                                            <div class="links_to_pages flex flex-col">
+                                                <a href="" class="text-white relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Локациялар
+                                                </a>
+                                                <a href="" class="text-white mt-2  relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Есептер
+                                                </a>
+                                                <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Аудит
+                                                </a>
+                                                <a href="" class="text-white mt-2 relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Анықтамалар мұрағаты
+                                                </a>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+    
+                                    <div class="documents py-3 rounded-lg">
+                                        <div class="faq-head text-[#151515] relative  flex items-center justify-between cursor-pointer rounded-[2px] border-none  aezakmi">
+                                            <div class="faq-title flex items-center">
+                                                <svg width="25" height="25" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_106)">
+                                                    <path d="M1.875 0.75C0.84082 0.75 0 1.42266 0 2.25V9.75C0 10.5773 0.84082 11.25 1.875 11.25H13.125C14.1592 11.25 15 10.5773 15 9.75V4.5C15 3.67266 14.1592 3 13.125 3H2.34375C2.08594 3 1.875 2.83125 1.875 2.625C1.875 2.41875 2.08594 2.25 2.34375 2.25H13.125C13.6436 2.25 14.0625 1.91484 14.0625 1.5C14.0625 1.08516 13.6436 0.75 13.125 0.75H1.875ZM12.1875 6.375C12.4361 6.375 12.6746 6.45402 12.8504 6.59467C13.0262 6.73532 13.125 6.92609 13.125 7.125C13.125 7.32391 13.0262 7.51468 12.8504 7.65533C12.6746 7.79598 12.4361 7.875 12.1875 7.875C11.9389 7.875 11.7004 7.79598 11.5246 7.65533C11.3488 7.51468 11.25 7.32391 11.25 7.125C11.25 6.92609 11.3488 6.73532 11.5246 6.59467C11.7004 6.45402 11.9389 6.375 12.1875 6.375Z" fill="white"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_1_106">
+                                                    <rect width="15" height="12" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <a href="" class="text-white font-semibold mt-2 ml-3 relative cursor-pointer no-underline 
+                                                after:content-[''] after:block after:absolute after:right-0 after:bottom-[-3px]
+                                                after:w-0 after:h-0.5 after:bg-[#fff] after:transition-all after:duration-500
+                                                hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0
+                                                hover:after:bottom-[-3px] hover:after:h-0.5 hover:after:bg-[#fff] hover:after:transition-all
+                                                hover:after:duration-500">
+                                                    Төлемдер
+                                                </a>
+                                            </div>
+                                           
+                                                
+                                        </div>
+                                        </div>
+                                    </div
+                
+
+
+        </div>
+
+        <div class="content_panel">
+
+
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
